@@ -1,0 +1,4 @@
+A book entry system:
+	Users can take book and return
+	Admin can see what books are took by user
+	User/Admin can search for books
