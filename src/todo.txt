@@ -1,3 +1,0 @@
-Add search for book id
-use id instead of book name in log
-command line login
