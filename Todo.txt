@@ -1,4 +1,5 @@
 A book entry system:
-	Users can take book and return
-	Admin can see what books are took by user
+	Users can take book
+	Admin can see what books are took by user(log)
 	User/Admin can search for books
+
