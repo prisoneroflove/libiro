@@ -1,4 +1,5 @@
-#include <stdio.h>
+#include "util.h"
+
 typedef struct User {
   char name[40];
   char password[16];

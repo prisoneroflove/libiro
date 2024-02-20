@@ -1,7 +1,11 @@
 #include <stdint.h>
 #include <stdio.h>
-#define u32 uint32_t
+#include <stdlib.h>
+#include <string.h>
 #include <time.h>
+
+#define u32 uint32_t
+
 typedef enum DebugType {
   Error,
   Warn,

@@ -1,7 +1,4 @@
-#pragma once
 #include "book.h"
-#include "util.c"
-#include <string.h>
 
 void add_books(FILE *lib_appender, FILE *lib_reader, char *book_name,
                char *author_name) {
@@ -18,6 +15,6 @@ u32 get_book_ID(FILE *lib_appender, FILE *lib_reader, char *book_name) {
   debug_tool("Couldn't find the Book", Error);
   debug_tool("Adding the book in to the registry", Warn);
   // Add book author_name
-  add_books(lib_appender, lib_reader, book_name, NULL); /*TODO*/
+  add_books(lib_appender, lib_reader, book_name, NULL); 
   return 0;
 }

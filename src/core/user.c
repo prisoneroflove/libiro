@@ -1,8 +1,6 @@
 #include "user.h"
-#include "util.c"
 
 // For generating id
-#include "book.c"
 
 User make_user(char *username, char *pass) {
   User user;

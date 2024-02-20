@@ -1,8 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-
-#define u32 unsigned int
-
+#include "util.h"
 // IDK HOW TO USE THIS
 typedef struct Book {
   u32 id;
