@@ -2,3 +2,27 @@ A book entry system:
 	Users can take book
 	Admin can see what books are took by user(log)
 	User/Admin can search for books
+
+# Need to add
+Standraize File Name for storng
+Starting making the CLI
+
+# Working on it
+
+# Done ( If tested , A T will be on the right)
+---Books
+Add Books
+Get Book ID
+Generate Book ID
+
+--User
+Make Users
+Check Duplicate Users
+Add users to file
+
+--Log
+Take Books
+Check if a book is taken
+
+--Utils
+Debug Tool

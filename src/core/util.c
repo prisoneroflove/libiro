@@ -43,6 +43,8 @@ char *get_taken_time() {
   return ctime(&tm);
 }
 
+// TODO CAN BUG PROBABLABY
+
 // 0 if not found
 u32 get_id_search(FILE *lib_reader, char *search_name) {
   u32 id;
