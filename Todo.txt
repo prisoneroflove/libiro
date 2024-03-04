@@ -22,7 +22,7 @@ Add users to file
 
 --Log
 Take Books
-Check if a book is taken
+Check if a book is taken.
 
 --Utils
 Debug Tool
