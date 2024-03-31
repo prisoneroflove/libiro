@@ -46,6 +46,17 @@ char *get_taken_time() {
 // TODO CAN BUG PROBABLABY
 
 // 0 if not found
+int get_num_instance(FILE *reader, char *search_name) {
+  char line[100];
+  int num = 0;
+
+  while (fgets(line, sizeof(line), reader) != NULL) {
+    if (strstr(line, search_name) != NULL) {
+      num += 1;
+    }
+  }
+  return num;
+}
 u32 get_id_search(FILE *lib_reader, char *search_name) {
   u32 id;
   char line[100];
