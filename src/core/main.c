@@ -1,26 +1,44 @@
 #include "book.c"
 #include "user.c"
+#include "util.h"
 #include <stdio.h>
 
-int main() {
-  FILE *fp_writer, *fp_reader, *fp_appender;
-  fp_writer = fopen("library", "w");
-  fp_reader = fopen("library", "r");
-  fp_appender = fopen("library", "a");
+#define LIB_FILE_NAME "library"
+#define LOG_FILE_NAME "log"
+#define USERS_FILE_NAME "users"
 
-  FILE *log_reader = fopen("log", "r");
-  if (fp_writer == NULL || fp_reader == NULL || fp_appender == NULL) {
-    debug_tool("file open error fp", Error);
-    return -1;
+// May need to move to util
+void file_validator(char *name) {
+  FILE *temp_reader = fopen(name, "r");
+  if (temp_reader == NULL) {
+    FILE *temp_make = fopen(name, "w");
+    if (temp_make == NULL) {
+      char *format_str = (char *)malloc(sizeof(char) * 20);
+
+      snprintf(format_str, 20, "Validator Failed : %s", name);
+      debug_tool(format_str, Error);
+      free(format_str);
+    }
+    fclose(temp_make);
   }
+  fclose(temp_reader);
+}
 
-  add_books(fp_appender, fp_reader, "NIBBO", "KING");
+int main() {
+  FILE *lib_read_write, *fp_appender;
+  file_validator(LIB_FILE_NAME);
+  lib_read_write = fopen(LIB_FILE_NAME, "r+");
+  fp_appender = fopen(LIB_FILE_NAME, "a");
+
+  file_validator(LOG_FILE_NAME);
+  FILE *log_read_write = fopen(LOG_FILE_NAME, "r+");
+
+  add_books(fp_appender, lib_read_write, "NIBBO", "KING");
   make_user("MM", "asdasds");
-  get_num_instance(fp_reader, "NIBBO");
+  get_num_instance(lib_read_write, "NIBBO");
 
-  fclose(fp_writer);
-  fclose(log_reader);
+  fclose(lib_read_write);
+  fclose(log_read_write);
   fclose(fp_appender);
-  fclose(fp_reader);
   return 0;
 }

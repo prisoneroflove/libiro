@@ -1,23 +1,24 @@
 #pragma once
 #include "util.h"
 
-void debug_tool(char *s, DebugType status) {
+void debug_tool(char *err, DebugType status) {
   switch (status) {
   case Error:
-    printf("Error: %s\n", s);
+    printf("Error: %s\n", err);
     break;
   case Warn:
-    printf("Warn : %s\n", s);
+    printf("Warn : %s\n", err);
     break;
   case Done:
-    printf("Done: %s\n", s);
+    printf("Done: %s\n", err);
     break;
   case Log:
-    printf("Log: %s\n", s);
+    printf("Log: %s\n", err);
   }
 }
 
 u32 generate_ID(FILE *lib_reader) {
+  // remove validator and make it when the program starts in the main file
   if (lib_reader == NULL) {
     debug_tool("Couldn't generate id. Invalid filename/file missing", Error);
     exit(-1);
@@ -43,8 +44,6 @@ char *get_taken_time() {
   return ctime(&tm);
 }
 
-// TODO CAN BUG PROBABLABY
-
 // 0 if not found
 int get_num_instance(FILE *reader, char *search_name) {
   char line[100];
@@ -58,12 +57,12 @@ int get_num_instance(FILE *reader, char *search_name) {
   return num;
 }
 u32 get_id_search(FILE *lib_reader, char *search_name) {
-  u32 id;
+  u32 id = 0;
   char line[100];
   // search each line till you find the word
   while (fgets(line, sizeof(line), lib_reader) != NULL) {
     if (strstr(line, search_name) != NULL) {
-      return id;
+      return id + 1;
     }
     id += 1;
   }
