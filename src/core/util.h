@@ -17,5 +17,7 @@ typedef enum DebugType {
 void debug_tool(char *err, DebugType status);
 u32 generate_ID(FILE *lib_reader);
 u32 get_id_search(FILE *lib_reader, char *search_name);
+void get_id_search_with_skip(FILE *lib_reader, char *search_name,
+                             int *positions);
 int get_num_instance(FILE *reader, char *search_name);
 char *get_taken_time();
