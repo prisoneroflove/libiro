@@ -20,6 +20,10 @@
   ```
   cmake CMakeLists.txt
   ```
+* Run Make
+  ```
+  make
+  ```
   * Run the file
   > For Linux/MacOS
   ```
@@ -28,6 +32,11 @@
   > For Windows
    ```
   .\libiro
+  ```
+
+   * To clean
+  ```
+  make clean
   ```
 ## Version History
 * No Release Yet
