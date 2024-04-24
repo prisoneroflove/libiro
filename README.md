@@ -11,8 +11,8 @@
 
 ## Building  
   
-  * Clone the repo
-  * Move to the src directory
+* Clone the repo
+* Move to the src directory
   ```
   cd src
   ```
