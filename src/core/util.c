@@ -1,5 +1,5 @@
 #pragma once
-#include "util.h"
+#include "include/util.h"
 #include <stdio.h>
 
 void debug_tool(char *err, DebugType status) {

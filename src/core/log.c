@@ -1,6 +1,6 @@
-#include "log.h"
+#include "include/log.h"
+#include "include/util.h"
 #include "util.c"
-#include "util.h"
 #include <stdio.h>
 
 int is_book_taken(FILE *log_reader, FILE *lib_reader, char *book_name) {
