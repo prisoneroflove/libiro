@@ -16,7 +16,7 @@
   ```
   cd src
   ```
-  * Run Cmake
+* Run Cmake
   ```
   cmake CMakeLists.txt
   ```
@@ -24,7 +24,7 @@
   ```
   make
   ```
-  * Run the file
+* Run the file
   > For Linux/MacOS
   ```
   ./libiro
